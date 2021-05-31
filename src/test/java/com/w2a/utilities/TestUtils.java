@@ -11,11 +11,16 @@ import com.w2a.base.TestBase;
 
 public class TestUtils extends TestBase {
 
+	public static String screenshotpath;
+	public static String screenshotname;
+
 	public static void captureScreenShot() throws IOException {
 
 		File srfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-		FileUtils.copyFile(srfile, new File(System.getProperty("user.dir") + "\\target\\error.jpj"));
+		screenshotname = "error.jpg";
+
+		FileUtils.copyFile(srfile, new File(System.getProperty("user.dir") + "\\target\\surefire-reports\\html\\"+screenshotname));
 
 	}
 }

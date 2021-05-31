@@ -33,6 +33,8 @@ public class AddCustomerTest extends TestBase {
 		// Thread.sleep(2000);
 		alert.accept();
 		// Thread.sleep(2000);
+		
+		//Assert.fail();
 
 	}
 

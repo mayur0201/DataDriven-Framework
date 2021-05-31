@@ -15,25 +15,19 @@ import com.w2a.base.TestBase;
 import com.w2a.utilities.TestUtils;
 import com.w2a.utilities.XlUtils;
 
-public class AddCustomerTest extends TestBase {
+public class OpenAccountTest extends TestBase {
 
 	@Test(dataProviderClass = TestUtils.class, dataProvider = "getData")
-	public void addCustomerTest(String firstName, String lastName, String postCode, String alertText)
-			throws InterruptedException {
-		click("addCustBtn");
-		text("firstname", firstName);
-		text("lastname", lastName);
-		text("postcode", postCode);
-		click("addbtn");
+	public void openAccountTest(String customer, String currency) throws InterruptedException {
 
+		click("openAccBtn");
+		selectValue("customerId", customer);
+		selectValue("currencyId", currency);
+		click("process");
 		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
 
-		Assert.assertTrue(alert.getText().contains(alertText));
 		// Thread.sleep(2000);
 		alert.accept();
-		// Thread.sleep(2000);
-
-		// Assert.fail();
 
 	}
 

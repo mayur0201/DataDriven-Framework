@@ -8,13 +8,10 @@ import com.w2a.base.TestBase;
 
 public class BankManagerLoginTest extends TestBase {
 	@Test
-	public void loginBankManager() throws InterruptedException
-	{
+	public void loginBankManager() throws InterruptedException {
 		log.info("Inside login test");
-		driver.findElement(By.xpath(OR.getProperty("bmlBtn"))).click();
-		
+		click("bmlBtn");
 		log.debug("Login Successfully Executed");
 	}
-	
 
 }

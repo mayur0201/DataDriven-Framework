@@ -21,7 +21,6 @@ public class CustomListner extends TestBase implements ITestListener {
 			e.printStackTrace(); // Codes
 		}
 
-
 		test.log(LogStatus.PASS, arg0.getName().toUpperCase() + "PASS");
 		test.log(LogStatus.PASS, test.addScreenCapture(TestUtils.screenshotname));
 
@@ -54,5 +53,6 @@ public class CustomListner extends TestBase implements ITestListener {
 
 	public void onTestStart(ITestResult arg0) {
 		test = report.startTest(arg0.getName().toUpperCase());
+
 	}
 }
